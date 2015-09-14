@@ -4,6 +4,7 @@ class CreateTardies < ActiveRecord::Migration
       t.boolean :less_than_15
       t.text :reason
       t.datetime :date
+      t.references :student, index: true
 
       t.timestamps null: false
     end

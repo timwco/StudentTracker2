@@ -3,6 +3,7 @@ class CreateAbsences < ActiveRecord::Migration
     create_table :absences do |t|
       t.text :reason
       t.datetime :date
+      t.references :student, index: true
 
       t.timestamps null: false
     end
