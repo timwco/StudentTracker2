@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Tracker</title>
+</head>
+<body ng-app="Tracker">
+
+  <div class="container" ng-controller="HomeController">
+    <h1>Welcome</h1>
+    <%= yield %>
+  </div>
+
+  <%= javascript_include_tag "application" %>
+</body>
+</html>

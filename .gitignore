@@ -18,3 +18,6 @@
 
 # Mac Specific Stuff
 .DS_Store
+
+# Bower Components
+vendor/assets/components/*
