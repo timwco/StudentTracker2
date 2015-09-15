@@ -21,3 +21,6 @@
 
 # Bower Components
 vendor/assets/components/*
+
+# Ignore the Environment Variables
+.env
