@@ -1,3 +1,4 @@
+# app/middleware/selective_stack.rb
 class SelectiveStack
   def initialize(app)
     @app = app
