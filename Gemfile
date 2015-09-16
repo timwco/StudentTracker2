@@ -7,8 +7,10 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
+# Github Login & Requests
 gem 'omniauth'
 gem 'omniauth-github', '1.1.2'
+gem "octokit", "~> 4.0"
 
 gem 'mysql2', '~> 0.3.18'
 
