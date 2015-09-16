@@ -2,4 +2,8 @@
   <li ng-repeat="student in students">{{ student.name }}</li>
 </ul>
 
-<button ng-click="authenticate('github')">Sign in with GitHub</button>
+<% if @current_user %>
+  <%= "Welcome Someone" %>
+<% else %>
+  <%= link_to "Sign in with Github", "/auth/github" %>
+<% end %>

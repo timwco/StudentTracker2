@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20150914023333) do
     t.string   "email",      limit: 255
     t.string   "github",     limit: 255
     t.boolean  "graduate"
+    t.string   "provider",   limit: 255
+    t.string   "uid",        limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

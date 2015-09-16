@@ -5,6 +5,9 @@ class CreateStudents < ActiveRecord::Migration
       t.string :email
       t.string :github
       t.boolean :graduate
+      t.string :provider
+      t.string :uid
+
 
       t.timestamps null: false
     end

@@ -25,5 +25,9 @@ module StudentTrack
 
     # For Bower
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+
+    # config.middleware.use config.session_store, config.session_options
+    config.middleware.insert_before ActionDispatch::ParamsParser, "SelectiveStack"
+    
   end
 end

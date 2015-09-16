@@ -7,6 +7,8 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
+gem 'omniauth'
+gem 'omniauth-github', '1.1.2'
 
 gem 'mysql2', '~> 0.3.18'
 
