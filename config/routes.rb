@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
 
+
+
+  # Github Information
+  get "/github/user" => "github#user_info"
+  get "/github/repos" => "github#user_repos"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,8 +1,5 @@
 <div class="inner" ng-controller="HomeController">
   <h2><%= "Welcome #{current_user.name}" %></h2>
-  <p>
-    <%= github.email %>
-  </p>
   <ul>
     <li ng-repeat="student in students">{{ student.name }}</li>
   </ul>

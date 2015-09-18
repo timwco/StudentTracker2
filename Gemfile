@@ -12,6 +12,9 @@ gem 'omniauth'
 gem 'omniauth-github', '1.1.2'
 gem "octokit", "~> 4.0"
 
+gem 'pry'
+gem "github_api"
+
 gem 'mysql2', '~> 0.3.18'
 
 
