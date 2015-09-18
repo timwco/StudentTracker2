@@ -1,3 +1,5 @@
+//= require vendor-core.min
+//= require module-sidebar.min
 //= require angular/angular
 
 angular.module('Tracker', [])
