@@ -9,8 +9,34 @@
   border-radius: 50em;
 }
 
+.padding-top { padding-top: 25px; }
+
 .ls-bottom-footer body .st-container { padding-bottom: 0; }
 .ls-bottom-footer body .st-container>.sidebar { bottom: 0; }
 
+.ls-top-navbar-large body .st-container, .ls-top-navbar-xlarge .st-container, .top-navbar-large .st-container {
+  padding-top: 0;
+}
+
+.navbar-default {
+  background: transparent;
+  border: none;
+}
+
+.navbar-brand.navbar-brand-primary, .navbar-brand.navbar-brand-primary:hover {
+  color: red;
+}
+
 .green { color: rgba(102,187,106,1); }
 .red { color: rgba(224,108,117,1); }
+
+.paddBlock {
+  border: 1px solid rgba(226,233,230,1);
+  padding: 15px 25px;
+  background-color: white;
+  margin-bottom: 25px;
+}
+
+.media-body {
+  padding: 1px 10px;
+}
