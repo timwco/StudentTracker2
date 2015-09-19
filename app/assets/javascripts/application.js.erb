@@ -1,0 +1,40 @@
+//= require vendor-core.min
+//= require module-sidebar.min
+//= require lodash/lodash.min
+//= require angular/angular
+//= require angular-ui-router/release/angular-ui-router.min
+
+//= depend_on_asset 'dashboard.html'
+
+angular.module('Tracker', ['ui.router'])
+
+.config( function ($stateProvider, $urlRouterProvider) {
+
+  $urlRouterProvider.otherwise("/");
+
+  $stateProvider
+    .state('dashboard', {
+      url: "/",
+      templateUrl: "<%= asset_path('dashboard.html') %>",
+      controller: 'HomeController'
+    });
+
+})
+
+.controller('HomeController', function ($scope, $http) {
+
+  // Bootstrap the Current User
+  $scope.current_user = document.getElementById('current-user').getAttribute('value');
+  //
+  // $http.get('github/user/' + $scope.current_user).then( function (res) {
+  //   console.log(res);
+  // });
+
+  $http.get('github/issues/' + $scope.current_user).then( function (res) {
+    console.log(res.data[0]);
+    var issues = _.sortBy(res.data, 'state');
+    $scope.issues = issues;
+  });
+
+
+});

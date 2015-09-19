@@ -1,3 +1,16 @@
 /* ...
 *= require theme.min
 */
+
+
+.sidebar-block .profile img {
+  max-width: 150px;
+  margin-bottom: 15px;
+  border-radius: 50em;
+}
+
+.ls-bottom-footer body .st-container { padding-bottom: 0; }
+.ls-bottom-footer body .st-container>.sidebar { bottom: 0; }
+
+.green { color: rgba(102,187,106,1); }
+.red { color: rgba(224,108,117,1); }

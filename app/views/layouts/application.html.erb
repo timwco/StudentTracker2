@@ -24,7 +24,7 @@
                       <span class="icon-bar"></span>
                   </button>
                   <div class="navbar-brand navbar-brand-primary navbar-brand-logo navbar-nav-padding-left">
-                      <a class="svg" href="/">TIY Tracker</a>
+                      <a class="svg" href="/">Atlanta: JS</a>
                   </div>
               </div>
               <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,7 +37,7 @@
           <div data-scrollable>
               <div class="sidebar-block">
                   <div class="profile">
-                      <a href="#"><%= image_tag "guy-6.jpg" %></a>
+                      <a href="#"><%= image_tag @github_info.avatar_url %></a>
                       <h4 class="text-display-1 margin-none"><%= "#{current_user.name}" %></h4>
                   </div>
               </div>
@@ -63,9 +63,9 @@
           <%= yield %>
         </div>
       </div>
-      <footer class="footer">
+      <!-- <footer class="footer">
           <strong>The Iron Yard</strong> v0.0.1 &copy; Copyright 2015
-      </footer>
+      </footer> -->
   </div>
   <!-- /st-container -->
 
