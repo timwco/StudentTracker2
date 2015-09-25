@@ -13,9 +13,6 @@
 /tmp
 
 
-# Hide DB Creds
-/config/database.yml
-
 # Mac Specific Stuff
 .DS_Store
 
