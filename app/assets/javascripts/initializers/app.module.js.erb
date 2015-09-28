@@ -1,0 +1,16 @@
+//= depend_on_asset 'dashboard.html'
+
+angular.module('Tracker', ['ui.router'])
+
+.config( function ($stateProvider, $urlRouterProvider) {
+
+  $urlRouterProvider.otherwise("/");
+
+  $stateProvider
+    .state('dashboard', {
+      url: "/",
+      templateUrl: "<%= asset_path('dashboard.html') %>",
+      controller: 'HomeController'
+    });
+
+})
