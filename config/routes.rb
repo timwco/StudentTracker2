@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :progress_entries, except: [:new, :edit]
   resources :absences, except: [:new, :edit]
   resources :tardies, except: [:new, :edit]
   resources :students, except: [:new, :edit]

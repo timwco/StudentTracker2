@@ -55,3 +55,7 @@
   width: 75px;
   border-radius: 5em;
 }
+
+.admin-true, .admin-true::after {
+  background-color: #e23f2b !important;
+}

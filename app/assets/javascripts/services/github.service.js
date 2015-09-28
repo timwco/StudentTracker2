@@ -9,7 +9,11 @@ angular.module('Tracker')
 
   // Get All Users for Org
   this.getUsersInOrg = function () {
-    return $http.get('github/org-members');
+    return $http({
+      url: 'github/org-members',
+      method: 'get',
+      cache: true
+    });
   };
 
 

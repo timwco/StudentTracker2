@@ -11,8 +11,8 @@ class GithubController < ApplicationController
   end
 
   def open_issues
-    @open_issues = Github.issues.list user: GITHUB_ORG,
-      repo: ASSIGN_REPO,
+    @open_issues = Github.issues.list user: APP_CONF['org'],
+      repo: APP_CONF['repo'],
       state: 'all',
       # labels: 'Complete',
       assignee: params[:username]

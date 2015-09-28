@@ -7,12 +7,12 @@
     <ul class="list-group">
         <li class="list-group-item media v-middle" ng-repeat="member in members">
             <div class="media-body">
-                <a href="{{ member.html_url }}" class="text-subhead list-group-link">
+                <a target="_blank" href="{{ member.html_url }}" class="text-subhead list-group-link">
                     <img src="{{ member.avatar_url }}" class="miniHead">
                 </a>
             </div>
             <div class="media-right" ng-switch on="issue.state">
-                <a href="{{ member.html_url }}" class="text-subhead list-group-link">{{ member.login }}</a>
+                <a target="_blank" href="{{ member.html_url }}" class="text-subhead list-group-link">{{ member.login }}</a>
             </div>
         </li>
     </ul>

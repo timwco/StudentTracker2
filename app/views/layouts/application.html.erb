@@ -17,8 +17,12 @@
           <div class="container-fluid">
               <div class="navbar-header">
                   <a href="#sidebar-menu" data-toggle="sidebar-menu" class="toggle pull-left visible-xs"><i class="fa fa-ellipsis-v"></i></a>
-                  <div class="navbar-brand navbar-brand-primary navbar-brand-logo navbar-nav-padding-left">
-                      <a class="svg" href="/">Atlanta: JS</a>
+                  <div class="navbar-brand navbar-brand-primary navbar-brand-logo navbar-nav-padding-left admin-<%= @current_user.admin %>">
+                    <% if @current_user.admin %>
+                      <a class="svg" href="/">Instructor</a>
+                    <% else %>
+                      <a class="svg" href="/">Student</a>
+                    <% end %>
                   </div>
               </div>
               <!-- Collect the nav links, forms, and other content for toggling -->
