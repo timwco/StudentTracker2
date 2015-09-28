@@ -1,12 +1,13 @@
 angular.module('Tracker')
 
-.controller('HomeController', function ($scope, $http) {
+.controller('UserController', function ($scope, $http, GithubService) {
 
-  // Bootstrap the Current User
-  $scope.current_user = document.getElementById('current-user').getAttribute('value');
+  // Bootstrap the Current User & Admin
+  $scope.currentUser = $('#current-user').val();
+  $scope.isAdmin = $('#current-user-admin').val();
 
-  $http.get('github/issues/' + $scope.current_user).then( function (res) {
-    console.log(res.data[0]);
+  // Get Issues
+  GithubService.getIssues($scope.currentUser).then( function (res) {
 
     // Sort and Bind Issues
     $scope.issues = _.sortBy(res.data, 'state').reverse();

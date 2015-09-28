@@ -1,4 +1,5 @@
-//= depend_on_asset 'dashboard.html'
+//= depend_on_asset 'dashboard-admin.html'
+//= depend_on_asset 'dashboard-user.html'
 
 angular.module('Tracker', ['ui.router'])
 
@@ -9,8 +10,27 @@ angular.module('Tracker', ['ui.router'])
   $stateProvider
     .state('dashboard', {
       url: "/",
-      templateUrl: "<%= asset_path('dashboard.html') %>",
-      controller: 'HomeController'
-    });
+      // Check for User/Admin
+      controller: function ($state) {
+        var isAdmin = $('#current-user-admin').val();
+        if( isAdmin === 'true' ) {
+          $state.go('admin_landing');
+        } else {
+          $state.go('user_landing')
+        }
+      }
+    })
+
+    .state('admin_landing', {
+      url: "/admin",
+      templateUrl: "<%= asset_path('dashboard-admin.html') %>",
+      controller: 'AdminController'
+    })
+
+    .state('user_landing', {
+      url: "/user",
+      templateUrl: "<%= asset_path('dashboard-user.html') %>",
+      controller: 'UserController'
+    })
 
 })
