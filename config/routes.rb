@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get "/github/user/:username" => "github#user_info"
   get "/github/repos/:username" => "github#user_repos"
   get "/github/issues/:username" => "github#open_issues"
+  get "/github/org-members" => "github#org_members"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

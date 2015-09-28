@@ -11,12 +11,17 @@ class GithubController < ApplicationController
   end
 
   def open_issues
-    @open_issues = Github.issues.list user: 'tiy-atl-js-sept-2015',
-      repo: 'Assignments',
+    @open_issues = Github.issues.list user: GITHUB_ORG,
+      repo: ASSIGN_REPO,
       state: 'all',
       # labels: 'Complete',
       assignee: params[:username]
     render json: @open_issues
+  end
+
+  def org_members
+    @members = Github.orgs.members.list GITHUB_ORG
+    render json: @members
   end
 
 end
