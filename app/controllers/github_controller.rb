@@ -11,7 +11,7 @@ class GithubController < ApplicationController
   end
 
   def open_issues
-    @open_issues = Github.issues.list user: 'tiy-atl-js-q2-2015',
+    @open_issues = Github.issues.list user: 'tiy-atl-js-sept-2015',
       repo: 'Assignments',
       state: 'all',
       # labels: 'Complete',

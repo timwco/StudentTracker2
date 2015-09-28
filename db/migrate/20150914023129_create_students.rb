@@ -7,6 +7,7 @@ class CreateStudents < ActiveRecord::Migration
       t.boolean :graduate
       t.string :provider
       t.string :uid
+      t.boolean :admin
 
 
       t.timestamps null: false

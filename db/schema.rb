@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150914023333) do
     t.boolean  "graduate"
     t.string   "provider",   limit: 255
     t.string   "uid",        limit: 255
+    t.boolean  "admin"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

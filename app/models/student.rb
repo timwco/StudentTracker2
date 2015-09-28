@@ -11,6 +11,8 @@ class Student < ActiveRecord::Base
       student.provider = auth["provider"]
       student.uid = auth["uid"]
       student.name = auth["info"]["name"]
+      # Super janky - will fix later
+      student.admin = if ['twhitacre'].include? auth["info"]["nickname"] then true else false end
     end
   end
 
