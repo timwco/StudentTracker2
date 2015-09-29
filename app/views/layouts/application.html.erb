@@ -40,9 +40,15 @@
                   </div>
               </div>
               <ul class="sidebar-menu">
-                  <li><a href="/#/"><i class="fa fa-list"></i><span>Assignments</span></a></li>
-                  <li><a href="/#/reports"><i class="fa fa-flag"></i><span>Progress Reports</span></a></li>
-                  <li><a href="/signout"><i class="fa fa-sign-out"></i><span>Log Out</span></a></li>
+                  <% if @current_user.admin %>
+                    <li><a href="/#/"><i class="fa fa-list"></i><span>Student List</span></a></li>
+                    <li><a href="/#/reports"><i class="fa fa-flag"></i><span>Manage Reports</span></a></li>
+                    <li><a href="/signout"><i class="fa fa-sign-out"></i><span>Log Out</span></a></li>
+                  <% else %>
+                    <li><a href="/#/"><i class="fa fa-list"></i><span>My Assignments</span></a></li>
+                    <li><a href="/#/reports"><i class="fa fa-flag"></i><span>My Progress</span></a></li>
+                    <li><a href="/signout"><i class="fa fa-sign-out"></i><span>Log Out</span></a></li>
+                <% end  %>
               </ul>
           </div>
       </div>

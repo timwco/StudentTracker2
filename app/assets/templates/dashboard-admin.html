@@ -8,7 +8,7 @@
         <li class="list-group-item media v-middle" ng-repeat="member in members">
             <div class="media-body">
                 <a target="_blank" href="{{ member.html_url }}" class="text-subhead list-group-link">
-                    <img src="{{ member.avatar_url }}" class="miniHead">
+                    <img ng-show="member.avatar_url" ng-src="{{ member.avatar_url }}" class="miniHead">
                 </a>
             </div>
             <div class="media-right" ng-switch on="issue.state">

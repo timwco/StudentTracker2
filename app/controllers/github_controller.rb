@@ -20,7 +20,7 @@ class GithubController < ApplicationController
   end
 
   def org_members
-    @members = Github.orgs.members.list GITHUB_ORG
+    @members = Github.orgs.members.list APP_CONF['org']
     render json: @members
   end
 
