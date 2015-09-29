@@ -56,6 +56,9 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.2)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     json (1.8.3)
     jwt (1.5.1)
@@ -140,6 +143,10 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    wuparty (1.2.5)
+      httparty (>= 0.6.1)
+      mime-types (>= 1.16)
+      multipart-post (>= 1.0.1)
 
 PLATFORMS
   ruby
@@ -154,6 +161,7 @@ DEPENDENCIES
   rails (= 4.2.3)
   rails-api
   spring
+  wuparty
 
 BUNDLED WITH
    1.10.6

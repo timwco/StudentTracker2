@@ -14,6 +14,7 @@ gem "octokit", "~> 4.0"
 
 gem 'pry'
 gem "github_api"
+gem "wuparty"
 
 gem 'mysql2', '~> 0.3.18'
 

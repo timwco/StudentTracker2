@@ -1,7 +1,4 @@
 class Student < ActiveRecord::Base
-  has_many :absences
-  has_many :tardies
-  has_many :progress_entries
 
   def self.create_with_omniauth(auth)
     create! do |student|

@@ -1,2 +1,0 @@
-class ProgressReportsController < ApplicationController
-end

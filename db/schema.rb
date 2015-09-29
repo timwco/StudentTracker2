@@ -11,35 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150928232900) do
+ActiveRecord::Schema.define(version: 20150929185942) do
 
-  create_table "absences", force: :cascade do |t|
-    t.text     "reason",     limit: 65535
-    t.datetime "date"
-    t.integer  "student_id", limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
-  add_index "absences", ["student_id"], name: "index_absences_on_student_id", using: :btree
-
-  create_table "progress_entries", force: :cascade do |t|
-    t.text     "objective_status",   limit: 65535
-    t.text     "comments",           limit: 65535
-    t.integer  "progress_report_id", limit: 4
-    t.integer  "student_id",         limit: 4
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-  end
-
-  add_index "progress_entries", ["progress_report_id"], name: "index_progress_entries_on_progress_report_id", using: :btree
-  add_index "progress_entries", ["student_id"], name: "index_progress_entries_on_student_id", using: :btree
-
-  create_table "progress_reports", force: :cascade do |t|
-    t.text     "report_name",       limit: 65535
-    t.text     "report_objectives", limit: 65535
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+  create_table "reports", force: :cascade do |t|
+    t.string   "form_id",    limit: 255
+    t.string   "title",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "students", force: :cascade do |t|
@@ -53,16 +31,5 @@ ActiveRecord::Schema.define(version: 20150928232900) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
-
-  create_table "tardies", force: :cascade do |t|
-    t.boolean  "less_than_15"
-    t.text     "reason",       limit: 65535
-    t.datetime "date"
-    t.integer  "student_id",   limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
-
-  add_index "tardies", ["student_id"], name: "index_tardies_on_student_id", using: :btree
 
 end
