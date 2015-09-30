@@ -1,5 +1,6 @@
 //= depend_on_asset 'dashboard-admin.html'
 //= depend_on_asset 'dashboard-user.html'
+//= depend_on_asset 'reports-admin.html'
 
 angular.module('Tracker', ['ui.router'])
 
@@ -35,8 +36,8 @@ angular.module('Tracker', ['ui.router'])
 
     .state('reports', {
       url: '/reports',
-      templateUrl: "",
-      controller: 'ReportController'
+      templateUrl: "<%= asset_path('reports-admin.html') %>",
+      controller: 'ReportsController'
     })
 
 })

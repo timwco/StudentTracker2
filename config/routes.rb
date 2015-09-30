@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get "/github/issues/:username" => "github#open_issues"
   get "/github/org-members" => "github#org_members"
 
+
+  # Wufoo Information
+  get "/wufoo/forms" => "wufoo#get_forms"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

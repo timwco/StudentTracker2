@@ -1,0 +1,16 @@
+<div class="panel panel-default paper-shadow" data-z="0.5">
+    <div class="panel-heading">
+        <h4 class="text-headline margin-none">
+            Progress Reports
+        </h4>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item media v-middle" ng-repeat="report in reports">
+            <div class="media-body">
+                <a target="_blank" href="https://{{ report.party.account }}.wufoo.com/entries/{{ report.id }}" class="text-subhead list-group-link">
+                    {{ report.details.Name }}
+                </a>
+            </div>
+        </li>
+    </ul>
+</div>
