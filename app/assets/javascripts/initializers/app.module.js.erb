@@ -1,6 +1,8 @@
 //= depend_on_asset 'dashboard-admin.html'
 //= depend_on_asset 'dashboard-user.html'
 //= depend_on_asset 'reports-admin.html'
+//= depend_on_asset 'reports-user.html'
+//= depend_on_asset 'reports-single.html'
 
 angular.module('Tracker', ['ui.router'])
 
@@ -36,8 +38,32 @@ angular.module('Tracker', ['ui.router'])
 
     .state('reports', {
       url: '/reports',
+      controller: function ($state) {
+        var isAdmin = $('#current-user-admin').val();
+        if( isAdmin === 'true' ) {
+          $state.go('admin_reports');
+        } else {
+          $state.go('user_reports')
+        }
+      }
+    })
+
+    .state('admin_reports', {
+      url: '/reports-admin',
       templateUrl: "<%= asset_path('reports-admin.html') %>",
       controller: 'ReportsController'
+    })
+
+    .state('user_reports', {
+      url: '/reports-user',
+      templateUrl: "<%= asset_path('reports-user.html') %>",
+      controller: 'ReportsController'      
+    })
+
+    .state('single_report', {
+      url: '/reports-user/:reportId',
+      templateUrl: "<%= asset_path('reports-single.html') %>",
+      controller: 'ReportsController'      
     })
 
 })

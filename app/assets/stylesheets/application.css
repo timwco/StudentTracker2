@@ -38,6 +38,12 @@
 .relElem {
   position: relative;
 }
+.paddDown {
+  padding-top: 10px;
+}
+.status-right {
+  float: right;
+}
 
 
 /* Login Page */

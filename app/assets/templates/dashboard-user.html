@@ -1,28 +1,32 @@
+<div class="spinner" ng-hide="issues"><span class="text">Loading ...</span></div>
 <div class="panel panel-default">
-    <div class="media v-middle">
-        <div class="media-left">
-            <div class="bg-{{ color }}-400 text-white">
-                <div class="panel-body"><i class="fa {{ icon }} fa-fw fa-2x"></i></div>
-            </div>
-        </div>
-        <div class="media-body">{{ status }}</div>
+  <div class="media v-middle">
+    <div class="media-left">
+      <div class="bg-{{ color }}-400 text-white">
+        <div class="panel-body"><i class="fa {{ icon }} fa-fw fa-2x"></i></div>
+      </div>
     </div>
+    <div class="media-body paddDown">{{ status }}</div>
+  </div>
 </div>
 
 <div class="panel panel-default paper-shadow" data-z="0.5">
-    <div class="panel-heading">
-        <h4 class="text-headline margin-none">Assignments</h4>
-        <p class="text-subhead text-light">{{ complete }} out of {{ total }} complete</p>
-    </div>
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      Assignments
+      <small>{{ complete }} out of {{ total }} complete</small>
+    </h3>
+  </div>
+  <div class="panel-body">
     <ul class="list-group">
-        <li class="list-group-item media v-middle" ng-repeat="issue in issues">
-            <div class="media-body">
-                <a href="{{ issue.html_url }}" class="text-subhead list-group-link">{{ issue.title }}</a>
-            </div>
-            <div class="media-right" ng-switch on="issue.state">
-                <i class="fa fa-check-circle fa-fw fa-2x green" ng-switch-when="closed"></i>
-                <i class="fa fa-circle-o fa-fw fa-2x red" ng-switch-when="open"></i>
-            </div>
-        </li>
+      <li class="list-group-item" ng-repeat="issue in issues">
+        <a href="{{ issue.html_url }}" class="text-subhead list-group-link">{{ issue.title }}</a>
+        <div class="status-right" ng-switch on="issue.state">
+          <i class="fa fa-check-circle fa-fw fa-2x green" ng-switch-when="closed"></i>
+          <i class="fa fa-circle-o fa-fw fa-2x red" ng-switch-when="open"></i>
+        </div>
+        <div class="clear"></div>
+      </li>
     </ul>
+  </div>
 </div>

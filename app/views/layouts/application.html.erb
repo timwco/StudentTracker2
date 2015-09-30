@@ -32,7 +32,7 @@
             <i class="fa fa-user"></i> <%= "#{current_user.name}" %> <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#"><i class="fa fa-fw fa-user"></i> Profile</a></li>
+            <li><a target="_blank" href="http://github.com/<%= @github_info.login %>"><i class="fa fa-fw fa-github"></i> Github Profile</a></li>
             <li class="divider"></li>
             <li><a href="/signout"><i class="fa fa-fw fa-power-off"></i> Log Out</a></li>
           </ul>
@@ -57,7 +57,7 @@
             <li><a href="/signout"><i class="fa fa-fw fa-power-off"></i> Log Out</a></li>
           <% else %>
             <li><a href="/#/"><i class="fa fa-fw fa-dashboard"></i> My Assignments</a></li>
-            <li><a href="/#/reports"><i class="fa fa-fw fa-bar-chart-o"></i> My Progress</a></li>
+            <li><a href="/#/reports"><i class="fa fa-fw fa-bar-chart-o"></i> Progress Reports</a></li>
             <li><a href="/signout"><i class="fa fa-fw fa-power-off"></i> Log Out</a></li>
           <% end %>
         </ul>
