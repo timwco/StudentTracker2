@@ -4,16 +4,47 @@
             Your Students - <small>{{ members.length }} Total</small>
         </h4>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item media v-middle" ng-repeat="member in members">
-            <div class="media-body">
-                <a target="_blank" href="{{ member.html_url }}" class="text-subhead list-group-link">
-                    <img ng-show="member.avatar_url" ng-src="{{ member.avatar_url }}" class="miniHead">
-                </a>
+    <div class="page-section third">
+      <div class="media messages-container media-clearfix-xs-min media-grid">
+        <div class="media-left">
+          <div class="messages-list">
+            <div class="panel panel-default paper-shadow" data-z="0.5" data-scrollable-h="" tabindex="1" style="overflow: hidden; outline: none;">
+              <ul class="list-group">
+                <li class="list-group-item" ng-repeat="member in members">
+                  <a href="#">
+                    <div class="media v-middle">
+                      <div class="media-left">
+                        <img ng-src="{{ member.avatar_url }}" class="miniHead">
+                      </div>
+                      <div class="media-body">
+                        <span class="user">{{ member.login }}</span>
+                        <div class="text-light">
+                          <a target="_blank" href="{{ member.html_url }}">github.com/{{ member.login }}</a>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div class="media-right" ng-switch on="issue.state">
-                <a target="_blank" href="{{ member.html_url }}" class="text-subhead list-group-link">{{ member.login }}</a>
+          </div>
+        </div>
+        <div class="media-body">
+          <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated="">
+            <div class="panel-body">
+              <div class="media v-middle">
+                <div class="media-left">
+                  <!-- <img src="images/people/110/woman-5.jpg" alt="person" class="media-object img-circle width-50"> -->
+                </div>
+                <div class="media-body message">
+                  <h4 class="text-subhead margin-none"><a href="#">NAME</a></h4>
+                  <p class="text-caption text-light"><i class="fa fa-clock-o"></i>SOMETHING</p>
+                </div>
+              </div>
+              <p>CONTENT</p>
             </div>
-        </li>
-    </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
