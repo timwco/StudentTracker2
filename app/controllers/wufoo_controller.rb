@@ -14,12 +14,23 @@ class WufooController < ApplicationController
   end
 
   # Get Single Form Entries (by name)
-  def get_entries_by_name
+  def get_entries_by_name  
     form = @wufoo.form(params[:formId])
-    # @entries = form.entries(filters: [['Field1', 'Contains', params[:user]]])
-    @entries = form.entries(filters: [['Field1', 'Contains', 'demostudent']], system: true)
+
+    begin
+      @entries = form.entries(filters: [['Field1', 'Contains', params[:user]]])
+      # @entries = form.entries(filters: [['Field1', 'Contains', 'demostudent']], system: true)
+    rescue WuParty::HTTPError => e
+      @error = e
+    end
+
     # @fields = form.fields
-    render json: @entries
+    if @entries 
+      render json: @entries
+    elsif 
+      render :json => { :error => 'Sorry, there is no report here yet.' }, :status => 200
+    end
+      
   end
 
 
