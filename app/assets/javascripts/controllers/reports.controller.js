@@ -14,8 +14,11 @@ angular.module('Tracker')
 
   var user = $('#current-user').val();
 
+  $scope.title = $stateParams.formId;
+
   WufooService.getEntries($stateParams.formId, user).then( function (response) {
-    console.log(response);
+    $scope.entries = response.data;
+    console.log($scope.entries);
   });
 
 

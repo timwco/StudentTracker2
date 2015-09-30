@@ -1,1 +1,16 @@
-I'm a single report!!!
+<div class="spinner" ng-hide="entries"><span class="text">Loading ...</span></div>
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Progress Report <small>{{ title }}</small></h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="entry in entries">
+            <p>{{ entry.Field2 }}</p>
+            <p>{{ entry.Field3 }}</p>
+        </li>
+    </ul>
+  </div>
+</div>
