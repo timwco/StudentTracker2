@@ -16,5 +16,14 @@ angular.module('Tracker')
     });
   };
 
+  // Get Specific User Info
+  this.getUserInfo = function (username) {
+    return $http({
+      url: '/github/user/' + username,
+      method: 'get',
+      cache: true
+    })
+  };
+
 
 })

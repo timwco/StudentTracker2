@@ -1,22 +1,4 @@
-<div class="st-content-inner padding-none">
-    <input type="hidden" name="name" value="<%= @current_user.github %>" id="current-user">
-    <input type="hidden" name="admin" value="<%= @current_user.admin %>" id="current-user-admin">
-    <div class="container-fluid padding-top">
-        <!-- <div class="panel panel-default">
-            <div class="media v-middle">
-                <div class="media-left">
-                    <div class="bg-green-400 text-white">
-                        <div class="panel-body">
-                            <i class="fa fa-laptop fa-fw fa-2x"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="media-body">Notice Message Here</div>
-            </div>
-        </div> -->
-        <div class="row" data-toggle="isotope">
-            <div class="item col-xs-12 col-lg-12" ui-view></div>
-        </div>
-        <br/>
-    </div>
-</div>
+<input type="hidden" name="name" value="<%= @current_user.github %>" id="current-user">
+<input type="hidden" name="admin" value="<%= @current_user.admin %>" id="current-user-admin">
+
+<div class="container-fluid" ui-view></div>
