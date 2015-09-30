@@ -61,9 +61,9 @@ angular.module('Tracker', ['ui.router'])
     })
 
     .state('single_report', {
-      url: '/reports-user/:reportId',
+      url: '/reports-user/:formId',
       templateUrl: "<%= asset_path('reports-single.html') %>",
-      controller: 'ReportsController'      
+      controller: 'ReportsSingle'      
     })
 
 })

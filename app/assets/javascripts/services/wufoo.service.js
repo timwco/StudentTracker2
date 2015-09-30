@@ -9,7 +9,18 @@ angular.module('Tracker')
       method: 'get',
       cache: true
     });
-  }
+  };
+
+  this.getEntries = function (formId, user) {
+    return $http({
+      url: '/wufoo/entries/' + formId,
+      params: {
+        user: user
+      },
+      method: 'get',
+      cache: true
+    });
+  };
 
 
 })

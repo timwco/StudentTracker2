@@ -8,3 +8,15 @@ angular.module('Tracker')
 
 
 })
+
+
+.controller('ReportsSingle', function ($scope, WufooService, $stateParams) {
+
+  var user = $('#current-user').val();
+
+  WufooService.getEntries($stateParams.formId, user).then( function (response) {
+    console.log(response);
+  });
+
+
+})
