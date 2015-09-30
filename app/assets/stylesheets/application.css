@@ -4,13 +4,43 @@
 *= require theme/font-awesome.min
 */
 
+/* General */
+.clear { clear: both; }
 
+
+/* Sidebar */
+.avatar {
+  text-align: center;
+  width: 100%;
+  margin: 25px 0;
+}
+.avatar img {
+  width: 150px;
+  border-radius: 5em;
+}
+.avatar p {
+  color: white;
+  margin-top: 25px;
+}
+
+
+/* Page Content */
 .miniHead {
-  width: 50px;
+  width: 25px;
   float: left;
   margin-right: 15px;
 }
+.studentAvatar {
+  width: 100px;
+  float: left;
+  margin-right: 15px;
+}
+.relElem {
+  position: relative;
+}
 
+
+/* Login Page */
 .login-block {
   width: 400px;
   margin: 25px auto;
@@ -18,4 +48,48 @@
 }
 .ghLogin {
   vertical-align: super;
+}
+
+
+
+/* Spinner */
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+ 
+@-webkit-keyframes spinner {
+  to {-webkit-transform: rotate(360deg);}
+}
+ 
+.spinner {
+  min-width: 50px;
+  min-height: 50px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0 0 0 30px
+}
+.spinner .text {
+  display: block;
+  margin-top: -4px;
+}
+ 
+.spinner:before {
+  content: 'Loading…';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+ 
+.spinner:not(:required):before {
+  content: '';
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, .3);
+  border-top-color: rgba(0, 0, 0, .6);
+  animation: spinner .6s linear infinite;
+  -webkit-animation: spinner .6s linear infinite;
 }
