@@ -16,7 +16,9 @@ gem 'pry'
 gem "github_api"
 gem "wuparty"
 
-gem 'mysql2', '~> 0.3.18'
+# Database for Production/Development
+gem 'pg', :group => :production
+gem 'mysql2', '~> 0.3.18', :group => :development
 
 
 
