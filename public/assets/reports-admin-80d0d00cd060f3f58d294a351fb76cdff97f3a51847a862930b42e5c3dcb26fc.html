@@ -1,0 +1,15 @@
+<div class="spinner" ng-hide="reports"><span class="text">Loading ...</span></div>
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Progress Reports</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="report in reports">
+            <a target="_blank" href="https://{{ report.party.account }}.wufoo.com/entries/{{ report.id }}" class="text-subhead list-group-link">{{ report.details.Name }}</a>
+        </li>
+    </ul>
+  </div>
+</div>
