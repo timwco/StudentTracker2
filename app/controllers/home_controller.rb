@@ -20,4 +20,9 @@ class HomeController < ApplicationController
     end
   end
 
+  # Simply returns application data
+  def app_data
+    render json: {:weekend_assignments => APP_CONF['weekend_assignments']}
+  end
+
 end

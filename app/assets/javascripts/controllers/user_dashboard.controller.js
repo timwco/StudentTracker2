@@ -9,6 +9,25 @@ angular.module('Tracker')
   // Get Issues
   GithubService.getIssues($scope.currentUser).then( function (res) {
 
+    var pointsAvailable = 0;
+
+    // Check for assignment ratio
+    $http.get('/app-data').then( function (data) {
+      var count = res.data.length;
+      var weekend = data.data.weekend_assignments;
+
+      // Generate array of assignments
+      var assignmentNums = [];
+      for(var i = 1; i <= count; i++) { assignmentNums.push(i); }
+
+      // Get total points
+      // Update pointsAvailable
+      _.each(assignmentNums, function (a) {
+        pointsAvailable+= (_.contains(weekend, a)) ? 4 : 1;
+      });
+
+    });
+
     // Sort and Bind Issues
     $scope.issues = _.sortBy(res.data, 'state').reverse();
 

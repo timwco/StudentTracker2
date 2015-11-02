@@ -10,10 +10,12 @@ Rails.application.routes.draw do
 
   # Github Auth
   # post 'auth/github' => 'auth#github'
-  get '/auth/github', as: 'github_login'
+  get "/auth/github", as: "github_login"
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
 
+  # Basic Info
+  get "/app-data" => "home#app_data"
 
 
   # Github Information
