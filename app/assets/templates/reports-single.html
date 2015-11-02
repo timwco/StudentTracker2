@@ -8,9 +8,8 @@
   <div class="col-sm-12">
     <div class="alert alert-danger" ng-show="error">{{ error }}</div>
     <ul class="list-group" ng-hide="error">
-        <li class="list-group-item" ng-repeat="entry in entries">
-            <p>{{ entry.Field2 }}</p>
-            <p>{{ entry.Field3 }}</p>
+        <li class="list-group-item" ng-repeat="entry in entries" ng-if="entry.response">
+            <p>{{ entry.field }} - {{ entry.response }}</p>
         </li>
     </ul>
   </div>
