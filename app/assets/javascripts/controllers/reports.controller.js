@@ -31,6 +31,11 @@ angular.module('Tracker')
         return _.contains(_.values(y), userName + ' - ' + user);
       });
 
+      // Make sure we found an actual user's data
+      if(report.length <= 0) {
+        return $scope.error = 'Sorry, Form data could not be gathered at this time.';
+      }
+
       // Map a new array of objects with right field name and correct entry
       var final = [];
       _.each(fields, function (field) {
