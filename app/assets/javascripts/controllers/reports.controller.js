@@ -16,10 +16,15 @@ angular.module('Tracker')
 
   $scope.title = $stateParams.formId;
 
-  WufooService.getEntries($stateParams.formId, user).then( function (response) {
-    if (response.data.error) { return $scope.error = response.data.error; }
-    $scope.entries = response.data;
-  })
+  WufooService.getAllFields($stateParams.formId).then( function (response) {
+    console.log(response);
+    
+    WufooService.getEntries($stateParams.formId, user).then( function (response) {
+      if (response.data.error) { return $scope.error = response.data.error; }
+      $scope.entries = response.data;
+      console.log(response.data);
+    });
 
+  });
 
 })

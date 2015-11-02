@@ -11,6 +11,14 @@ angular.module('Tracker')
     });
   };
 
+  this.getAllFields = function (formId) {
+    return $http({
+      url: '/wufoo/fields/' + formId,
+      method: 'get',
+      cache: true
+    });
+  };
+
   this.getEntries = function (formId, user) {
     return $http({
       url: '/wufoo/entries/' + formId,

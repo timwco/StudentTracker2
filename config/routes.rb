@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   # Wufoo Information
   get "/wufoo/forms" => "wufoo#get_forms"
   get "/wufoo/entries/:formId" => "wufoo#get_entries_by_name"
+  get "/wufoo/fields/:formId" => "wufoo#get_fields"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

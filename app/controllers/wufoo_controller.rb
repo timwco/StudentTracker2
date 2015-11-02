@@ -13,12 +13,26 @@ class WufooController < ApplicationController
     render json: @forms
   end
 
+  # Get all Fields
+  def get_fields
+    form = @wufoo.form(params[:formId])
+    begin
+      @fields = form.fields()
+    rescue WuParty::HTTPError => e
+      @error = e
+    end
+
+    render json: @fields
+
+  end
+
   # Get Single Form Entries (by name)
   def get_entries_by_name  
     form = @wufoo.form(params[:formId])
 
     begin
-      @entries = form.entries(filters: [['Field1', 'Contains', params[:user]]])
+      # @entries = form.entries(filters: [['Field1', 'Contains', params[:user]]])
+      @entries = form.entries()
       # @entries = form.entries(filters: [['Field1', 'Contains', 'demostudent']], system: true)
     rescue WuParty::HTTPError => e
       @error = e
